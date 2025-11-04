@@ -1,0 +1,164 @@
+<!doctype html>
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تواصل معنا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --accent:#0f62fe;
+      --muted:#6b7280;
+      --success:#10b981;
+      font-family: 'Cairo', sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0b1220;}
+    .container{max-width:980px;margin:36px auto;padding:20px}
+    .card{background:var(--card);border-radius:14px;box-shadow:0 8px 28px rgba(12,18,33,0.06);overflow:hidden}
+    .grid{display:grid;grid-template-columns:1fr 420px;gap:0}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}} .left{padding:36px}
+.header{display:flex;align-items:center;gap:14px}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
+h1{margin:6px 0 0;font-size:22px}
+p.lead{color:var(--muted);margin-top:8px}
+
+form{margin-top:20px}
+label{display:block;margin-bottom:6px;font-weight:600}
+.row{display:inline-block;gap:12px}
+.field{margin-bottom:14px}
+input[type="text"],input[type="email"],textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6e9ef;background:#fbfdff;font-size:15px}
+textarea{min-height:140px;resize:vertical}
+.actions{display:flex;gap:12px;align-items:center;margin-top:8px}
+button{padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-wa{background:#25D366;color:#fff}
+.small{font-size:13px;color:var(--muted)}
+
+.right{background:linear-gradient(180deg,#fbfdff,var(--bg));padding:26px;border-left:1px solid #f1f5f9}
+.contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+.ci-icon{width:44px;height:44px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(12,18,33,0.06)}
+.ci-text{line-height:1.25}
+.ci-text strong{display:block}
+
+.note{margin-top:18px;padding:12px;border-radius:10px;background:#f8fafc;color:var(--muted);font-size:14px}
+
+footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="grid">
+        <div class="left">
+          <div class="header">
+            <div class="logo">تواصل</div>
+            <div>
+              <h1>تواصل معنا</h1>
+              <p class="lead">هل لديك سؤال أو اقتراح؟ أرسل رسالة وسنرد عليك قريبًا.</p>
+            </div>
+          </div><form id="contactForm" onsubmit="return false;">
+        <div class="row">
+          <div style="flex:1" class="field">
+            <label for="name">الاسم</label>
+            <input id="name" type="text" placeholder="اسمك الكامل" required>
+          </div>
+          <div style="width:200px" class="field">
+            <label for="phone">الهاتف (اختياري)</label>
+            <input id="phone" type="text" placeholder="مثال: +2499xxxxxxx">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">البريد الإلكتروني</label>
+          <input id="email" type="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="message">الرسالة</label>
+          <textarea id="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn-primary" id="sendEmail">إرسال عبر البريد</button>
+         
+          <span class="small">أو اتصل مباشرة عبر <strong>واتساب</strong> أو <strong>البريد</strong></span>
+        </div>
+
+        <div id="status" class="note" style="display:none"></div>
+      </form>
+    </div>
+
+    <aside class="right">
+      <div class="contact-item">
+        <div class="ci-icon">
+          <!-- mail icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5V17a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5" stroke="#0b1220" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6H3v2.5l9 6 9-6V6z" stroke="#0b1220" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ci-text">
+          <strong>البريد الإلكتروني</strong>
+          <span class="small">Zak.x55t5@gmail.com</span>
+        </div>
+      </div>
+
+     
+  <footer>حقوق النشر © جميع الحقوق محفوظة</footer>
+</div>
+
+  </div>  <script>
+    const sendEmailBtn = document.getElementById('sendEmail');
+    const sendWhatsBtn = document.getElementById('sendWhats');
+    const status = document.getElementById('status');
+
+    function showStatus(msg, ok=true){
+      status.style.display='block';
+      status.textContent = msg;
+      status.style.borderLeft = ok ? '4px solid var(--success)' : '4px solid #ef4444';
+    }
+
+    function buildMailto(name,email,phone,message){
+      const to = 'Zak.x55t5@gmail.com'; // ضع بريد الاستقبال هنا
+      const subject = `رسالة من صفحة التواصل - ${name}`;
+      let body = `الاسم: ${name}%0Aالبريد: ${email}`;
+      if(phone) body += `%0Aالهاتف: ${phone}`;
+      body += `%0A%0A${message}`;
+      return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    }
+
+    function buildWhatsAppText(name,email,phone,message){
+      let txt = `مرحبًا، لدي رسالة من صفحة التواصل%0A%0Aالاسم: ${name}%0Aالبريد: ${email}`;
+      if(phone) txt += `%0Aالهاتف: ${phone}`;
+      txt += `%0A%0A${message}`;
+      return txt;
+    }
+
+    sendEmailBtn.addEventListener('click', ()=>{
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){ showStatus('الرجاء تعبئة الحقول المطلوبة', false); return; }
+      const link = buildMailto(name,email,phone,encodeURIComponent(message));
+      // فتح تطبيق البريد
+      window.location.href = link;
+      showStatus('جارٍ فتح تطبيق البريد...');
+    });
+
+    sendWhatsBtn.addEventListener('click', ()=>{
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){ showStatus('الرجاء تعبئة الحقول المطلوبة', false); return; }
+      const text = buildWhatsAppText(name,email,phone,message);
+      // رابط عام لواتساب مع نص (يفتح نافذة اختيار رقم عند الحاجة)
+      const waLink = `https://api.whatsapp.com/send?text=${text}`;
+      window.open(waLink, '_blank');
+      showStatus('جارٍ فتح واتساب...');
+    });
+  </script></body>
+</html>

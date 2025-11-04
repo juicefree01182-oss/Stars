@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stars ⭐</title>
+  <style>
+    :root{font-family: system-ui, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial; direction: rtl;}
+    body{margin:0;background:#f4f7fb;color:#122;display:flex;min-height:100vh;align-items:flex-start;justify-content:center;padding:35px;}
+    .container{width:980px;max-width:100%;background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(10,20,40,.08);overflow:hidden;}
+    header{padding:18px 24px;border-bottom:1px solid #eef2f7;display:flex;gap:16px;align-items:center;background:linear-gradient(90deg,#0ea5a4, #6366f1);color:#fff;}
+    header h1{margin:0;font-size:18px;}
+    main{ gap:24px;padding:20px;}
+    .left{flex:1;}
+    .right{  width:320px;border-left:1px solid #f1f5f9; margin-right: 100px;
+    margin-top: 15px; }
+    .card{background:#fff;padding:16px;border-radius:10px;margin-bottom:16px;border:1px solid #f1f5f9;}
+    .points{font-size:36px;font-weight:700;color:#0f172a;}
+    .btn{width: 85px;  display:inline-block;padding:15px 7px;background:#0ea5a4;color:#fff;border-radius:8px;text-decoration:none;border:0;cursor:pointer ;     margin-right: 59px;}    
+    .link-item{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:8px;margin-bottom:8px;background:linear-gradient(180deg,#fff,#fbfcff);border:1px solid #eef2f7;}
+    .small{font-size:13px;color:#475569;}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px;box-sizing:border-box;}
+    label{font-size:13px;color:#0f172a;display:block;margin-top:8px;}
+    .muted{color:#64748b;font-size:13px;}
+    footer{padding:12px 18px;border-top:1px solid #eef2f7;background:#fbfdff;text-align:center;font-size:13px;}
+    .danger{background:#ef4444;}
+
+    li{ list-style: none; display: inline-block;  }
+
+    .f-121{font-size: 18px;  height: 28px;  width: 130px;  text-align: center;
+    margin-right: 30px;  float: right; 
+    border-radius: 14px 0 13px 0; cursor:pointer;  padding-top: 9px;  background: #0ea5919e; 
+    text-decoration: none; font-family: system-ui, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
+    color: #fff; }
+.f-121:hover{ color: #65486b;  background: rgb(212, 228, 212, 0.9); transition: 0.4s;-webkit-transition: 0.4s;-moz-transition: 0.4s;-ms-transition: 0.4s;-o-transition: 0.4s;}
+
+
+    #l-661{  float: left; 
+    width: 1100px;
+    height: 20px;
+    border: none;
+    margin-top: 9px;   
+    margin-left: 153px;
+    font-family: system-ui, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
+  }  
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 30px 60px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: fadeInUp 1.5s ease;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .profit {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00ff99;
+      animation: countUp 3s ease-out;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    @media screen and (max-width:1200px){
+    .f-121 {margin-right: 24px;
+    font-size: 14px;
+    height: 21px;
+    width: 75px;}
+
+    .card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 32px 3px;}
+
+    #h1 {
+    font-size: 17px;
+    margin-bottom: 14px;
+    margin-right: 24px;
+}
+
+.right {
+    width: 270px;
+    border-left: 1px solid #f1f5f9;
+    margin-right: -2px;
+    margin-top: 15px;
+}
+
+
+    }
+    @media  screen and (max-width:620px){
+
+      .f-122 {    margin-right: 4px;} 
+
+    }
+
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #h1 { font-size: 17px; margin-bottom: 15px; margin-right: 234px;}
+    p { font-size: 20px; }
+
+    
+   
+
+  </style>
+</head>
+<body>
+  <div class="container" role="application">
+    <header>
+      <div style="flex:1">
+        <h1>Welcome to Stars ⭐</h1>
+      
+        <li> <a id="h1"> </a><span id="userNameDisplay"></span> </a></li>
+        <div id="l-661">
+          
+         <li> <a id="f-110" class="f-121"  onclick="logout()">Log out</a></li>
+          <li><a id="f-110" class="f-121" href="Home.html">Sign in</a></li>
+            </div>
+         
+          
+          
+
+
+     
+     
+
+      </div>
+      <div>
+        <button class="btn" id="btn-logout" title="خروج تجريبي">تسجيل خروج</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="left">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="muted">Current balance</div>
+              <div class="points" id="points"> 0</div>
+              <div class="small">Earn dollars</div>
+            </div>
+            <div style="text-align:right">
+              <button class="btn" id="btn-claim">⭐</button>
+              <div class="small" style="margin-top:8px">Click to Win Now and Earn Dollars</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px 0">List of links(Click to Earn Dollars)</h3>
+   
+           <li>  <div style=" color: #ef4444;" class="small">Ad interaction review: Please stay for 30 seconds to complete withdrawal </div> </li>
+          
+           <div id="links-list">
+            <!-- عناصر الروابط تُضاف بواسطة جافاسكربت -->
+          </div>
+          <div class="small" style="margin-top:10px ; color: #ef4444;"> Important Notice :you Must interact With the link to Earn Money</div>
+     
+        
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px 0">Daily Earnings Records</h3>
+          <div id="activity-log" class="small muted">No Activity</div>
+        </div>
+      </section>
+
+      <h1>📊 Earnings Board</h1>
+
+      <div class="card">
+        <div class="profit" id="profit">0</div>
+        <div class="subtitle">We pay out daily</div>
+      </div>
+    
+      <script>
+        // عداد أرباح متحرك
+        const profitElement = document.getElementById('profit');
+        const target = 57330; // أرباح اليوم بالدولار مثلاً
+        let count = 0;
+    
+        const interval = setInterval(() => {
+          count += Math.ceil(target / 900); // سرعة العد
+          if (count >= target) {
+            count = target;
+            clearInterval(interval);
+          }
+          profitElement.textContent = count.toLocaleString() + " $";
+        }, 30);
+
+   // عند تحميل الصفحة، تحقق من وجود اسم المستخدم
+   window.onload = function() {
+      const username = localStorage.getItem("username");
+ 
+      if (!username) {
+        // إذا لم يكن مسجلاً، أعد التوجيه لصفحة تسجيل الدخول
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("userNameDisplay").textContent = username;
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("username");
+      window.location.href = "Home.html";
+    }
+
+     
+</script>
+
+      
+      <h1>$ Withdrawal Details </h1>
+    
+      <div class="card">
+        <div class="profit" id="profit">$10.00</div>
+        <div class="subtitle">Minimum Withdrawal Limit </div>
+      </div>
+
+
+      
+
+
+
+      <aside class="right">
+        <div class="card">
+          <h3 style="margin:0 0 8px 0">Withdrawa</h3>
+        
+
+          <label for="withdraw-method">Options</label>
+          <select id="withdraw-method" aria-label="Options">
+            <option value="binance">Binance (محفظة)</option>
+            <option value="bank">Bank Wire</option>
+            <option value="visa"> Visa card</optio>
+          </select>
+
+          <div id="method-forms" style="margin-top:10px">
+            <!-- صيغة السحب الديناميكية -->
+            <div id="form-binance" class="method-form">
+              <label>Wallet address BNB/BEP20/TRC20</label>
+              <input id="binance-address" placeholder=": .....xxxxxxxxxx....." />
+            </div>
+
+            <div id="form-bank" class="method-form" style="display:none">
+              <label>Bank name</label>
+              <input id="bank-name" placeholder="Bank name" />
+              <label>Account number / IBAN</label>
+              <input id="bank-account" placeholder="IBAN أو رقم الحساب" />
+            </div>
+   
+            <div id="form-visa" class="method-form" style="display:none">
+              <label>Name on card </label>
+              <input id="card-name" placeholder="As on card" />
+              <label>Card number</label>
+              <input id="card-number" placeholder="XXXX XXXX XXXX XXXX" />
+              <label>Expiry date</label>
+              <input id="card-exp" placeholder="MM/YY" />
+              <label>CVC</label>
+              <input id="card-cvc" placeholder="CVC" />
+              
+            </div>
+          </div>
+          <label>The amount</label>
+         
+          <input id="withdraw-amount" placeholder="$10.00" type="number" min="1" />
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn" id="submit-withdraw">Withdrawa</button>
+  
+          </div>
+
+          <div id="withdraw-response" class="small muted" style="margin-top:10px"></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px 0 ; color: #ef4444;">the withdrawal wil be processed within 6 hours!!!</h3>
+          
+        </div>
+        <li><a id="f-110" class="f-121" href="box.html">Help</a></li>
+        <li><a id="f-110" class="f-121" href="doml.html">About Us</a></li>
+      </aside>
+    </main>
+
+  
+  </div>
+
+ 
+
+  <script>
+    // --- بيانات تجريبية محلية ---
+    const LINKS = [
+      {id:1,title:"1 Interact with the ad and get dollars ", url:"https://unselfish-husband.com/TXtcdR ", points: 1.10},
+      {id:2,title:"2 Interact with the ad and get dollars ", url:"https://unselfish-husband.com/x93TDh", points:0.70},
+      {id:3,title:"3 Interact with the ad and get dollars ", url:"https://embarrassed-bridge.com/WMC7T0", points:2.40},
+      {id:4,title:"4 Interact with the ad and get dollars ", url:"https://embarrassed-bridge.com/kg2SwM", points:1.20}  ,   
+      {id:5,title:"5 Interact with the ad and get dollars ", url:"https://unselfish-husband.com/t2b1hH", points:1.10},
+      {id:6,title:"6 Interact with the ad and get dollars ", url:"https://unselfish-husband.com/APfb8i", points:0.50},
+      {id:7,title:"7 Interact with the ad and get dollars ", url:"https://unselfish-husband.com/ZvjBbc", points:2.80},
+      {id:8,title:"8 Interact with the ad and get dollars ", url:"https://unselfish-husband.com/9MUuqs", points:1.00},
+
+
+    ];
+
+    // نقاط مخزنة داخل الجلسة (تجريبي)
+    const state = {
+      points: Number(sessionStorage.getItem('points') || 0),
+      activity: JSON.parse(sessionStorage.getItem('activity') || '[]')
+    };
+
+    const el = id => document.getElementById(id);
+
+    function renderLinks(){
+      const container = el('links-list');
+      container.innerHTML = '';
+      LINKS.forEach(link=>{
+        const div = document.createElement('div');
+        div.className = 'link-item';
+        div.innerHTML = `<div>
+            <div style="font-weight:600">${link.title}</div>
+            <div class="small">Reward $ ${link.points} </div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+            <button class="btn" data-id="${link.id}">Win now</button>
+            <a class="small" href="${link.url}" target="_blank" rel="noopener noreferrer">Back to ad</a>
+          </div>`;
+        container.appendChild(div);
+      });
+    }
+
+    function updateUI(){
+      el('points').textContent = state.points;
+      const log = el('activity-log');
+      if(state.activity.length === 0) log.textContent = 'No Activity';
+      else log.innerHTML = state.activity.slice().reverse().map(a=>`<div style="margin-bottom:6px"><strong>${a.title}</strong> — +${a.points}My earnings <div class="small muted">${new Date(a.time).toLocaleString()}</div></div>`).join('');
+      sessionStorage.setItem('points', state.points);
+      sessionStorage.setItem('activity', JSON.stringify(state.activity));
+    }
+
+    // التعامل مع فتح الرابط وكسب النقاط (محاكاة: يمنح النقاط بعد 5 ثواني من الفتح)
+    document.addEventListener('click', e=>{
+      const btn = e.target.closest('button[data-id]');
+      if(!btn) return;
+      const id = Number(btn.dataset.id);
+      const link = LINKS.find(l=>l.id===id);
+      if(!link) return;
+      // افتح الرابط في نافذة جديدة ومنح النقاط بعد 5 ثواني (تجريبي)
+      window.open(link.url, '_blank', 'noopener');
+      btn.disabled = true;
+      btn.textContent = 'Dont go out.';
+      setTimeout(()=>{
+        state.points += link.points;
+        state.activity.push({title:link.title, points: link.points, time: Date.now()});
+        updateUI();
+        btn.textContent = 'Received $';
+      }, 33000);
+    });
+
+    // زر ادع نقاط (مثال: تحويل النقاط الى رصيد قابل للسحب — هنا مجرد عرض)
+    el('btn-claim').addEventListener('click', ()=>{
+      alert('في النسخة التجريبية: النقاط تُخزن محلياً. في نظام حقيقي، سيتم إرسالها إلى حسابك على الخادم للمعالجة.');
+    });
+
+    // تبديل نماذج السحب
+    el('withdraw-method').addEventListener('change', (ev)=>{
+      const v = ev.target.value;
+      document.querySelectorAll('.method-form').forEach(d=>d.style.display='none');
+      if(v === 'binance') el('form-binance').style.display = 'block';
+      if(v === 'bank') el('form-bank').style.display = 'block';
+      if(v === 'visa') el('form-visa').style.display = 'block';
+    });
+
+    // إرسال طلب سحب (محاكاة POST إلى backend)
+    el('submit-withdraw').addEventListener('click', async ()=>{
+      const amount = Number(el('withdraw-amount').value || 0);
+      if(!amount || amount <= 0){ el('withdraw-response').textContent = 'Enter a valid amount ? '; return; }
+      if(amount > state.points){ el('withdraw-response').textContent = 'Not enough dalance '; return; }
+
+      const method = el('withdraw-method').value;
+      const payload = {method, amount, meta:{}};
+      if(method === 'binance'){ payload.meta.address = el('binance-address').value.trim(); }
+      if(method === 'bank'){ payload.meta.bank = el('bank-name').value.trim(); payload.meta.account = el('bank-account').value.trim(); }
+      if(method === 'visa'){ payload.meta.cardName = el('card-name').value.trim(); /* لا نرسل أرقام حقيقية هنا */ }
+
+      el('withdraw-response').textContent =' Withdrawing money';
+      // في تطبيق حقيقي: استبدل URL بـ API endpoint مؤمن، وأضف توثيق JWT/Session
+      try {
+        // محاكاة تأخير الشبكة
+        await new Promise(r=>setTimeout(r,1000));
+        // محاكاة استجابة ناجحة من السيرفر
+        const serverResponse = {ok:true, message:'Withdrawal processing,please wait'};
+
+        if(serverResponse.ok){
+          state.points -= amount;
+          state.activity.push({title:`سحب (${method})`, points: -amount, time: Date.now()});
+          updateUI();
+          el('withdraw-response').textContent = serverResponse.message;
+        } else {
+          el('withdraw-response').textContent = 'فشل إرسال الطلب: ' + (serverResponse.message || 'خطأ غير معروف');
+        }
+      } catch (err){
+        el('withdraw-response').textContent = 'خطأ في الاتصال بالخادم.';
+      }
+    });
+
+    // إفراغ الرصيد (تجريبي)
+  
+
+    // تهيئة
+    renderLinks();
+    updateUI();
+  </script>
+</body>
+</html>
